@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myvueapp
+spec: 
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 2
+  template: 
+    metadata:
+      labels: 
+        app: myvueapp
+    spec:
+      containers:
+      - name: myvueapp
+      image: mercybassey/myvueapp
+      ports:
+      - containerPort: 8000
